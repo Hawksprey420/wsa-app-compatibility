@@ -129,14 +129,15 @@ wsa://com.apple.android.music
 | DevCheck | 3.39 | 11 | ❌ | Blank screen on startup
 | Device Info HW | 5.4.1 | 11 | ✅
 | Deezer | 7.0.14.1 beta | 12 | ✅ | The Deezer Labs crossfade function doesn't seem to work as of September 2022 | Music and menus seem to work pretty well, even with HiFi bitrates.
-| Digital Wellness | 1.5.500315346 (471337) | 13 | ✅ | Its not available in the Settings App by default, requires Activity Launcher to launch it. | You can make it show in the launcher if you enable "Show icon on app list".
+| Digital Wellness | 1.5.500315346 (471337) | 13 | ✅ | It's not available in the Settings App by default, requires Activity Launcher to launch it. | You can make it show in the launcher if you enable "Show icon on app list".
 | DirecTV for Tablet | 5.29.001 | 11 | ⚠️ || Frequent crashing, other functionality proper.
 | Discord | 98.6 | 11 | ✅
 | DMM Games Store | 2.8.0 | 11 | 🆖 | Requires GMS
 | Duolingo | 5.2.35 | 11 | ✅
 | DuckDuckGo Privacy Browser+ | 5.142.2 | 12 | ✅
 | Easybell | 2.1.30 | 11 | ✅
-| EDS Lite | 2.0.0.237 | 12 | ✅ || Tested on an Intel x86-64 CPU (may work on AMD64 or ARM64). Recommended to add the exFAT module if you have a container that use this filesystem.
+| EDS Lite | 2.0.0.237 | 12 | ✅ || Tested on an Intel x86-64 CPU (may work on AMD64 or ARM64). Recommended to add the exFAT module if you have a container that uses this filesystem.
+| eGovPH | 1.8.3 | 13 | ✅ || Tested on Android 13 WSA install with Google Play Services, so it is undetermined for stock WSA. Main functionality works except for camera verification where the captured image is fully maximized, which can affect eKYC verification. Has weird behavior for location permission in eReport where it can be stuck on permission control but a workaround is to access it via "Suggested eGovPH services" instead of clicking the report icon in the upper half of the UI. PhilSys QR code and data can be generated and viewed in the app as well.
 | Emby | 2.0.48g | 11 | ✅
 | ES File Explorer | 4.2.1.8 | 11 | ✅ || Avoid updating the app
 | Excel | 16.0.14527.20162 | 11 | ✅
