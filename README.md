@@ -9,6 +9,9 @@ When editing the Markdown, please keep these rules in mind:
 2. Double-check your spelling/grammar.
 3. In the Android column, ensure the latest version of Android is listed first. Separate subsequent versions with a comma `,` (e.g. `11`, `12, 11`, or `13, 12, 11`).
 
+## Note about Windows Subsystem for Android
+The [Windows Subsystem for Android](https://learn.microsoft.com/windows/android/wsa/) is no longer available in the Microsoft Store as of March 5, 2025.
+
 ## Issues / Support
 
 We can't offer support for the Windows Subsystem for Android (WSA) or Android apps.
@@ -62,8 +65,112 @@ wsa://com.apple.android.music
 
 ## Support tables
 
-* [Apps](#apps)
+The support tables will now be split into different categories:<br>
+<br>
+Apps will be split into different categories (example: Finance, Productivity, Casual, System, Music/Video, Imaging..)
+
+### App categories:
+* [iOS apps](#iOS)
+* [Finance](#finance)
+* [Productivity](#productivity)
+* [System](#system)
+* [Streaming](#streaming)
+* [Media](#media)
 * [Games](#games)
+* [AI](#ai)
+* [Government](#government)
+* [Google apps](#google-apps)
+
+  
+### iOS  
+| Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
+|-------------|-----------------------|------------------|---------------|--------------|-------|
+| iOS app (any) || 11 | ❌ | Thanks for testing, Brad.
+
+### Finance
+| Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
+|-------------|-----------------------|------------------|---------------|--------------|-------|
+| BankID (Norway) | 2.1 | 12 | ❌ | Spams the desktop browser with new tabs about how the app thinks the phone is rooted. 
+| Binance | 2.36.5 | 11 | ✅
+| GCash | 5.62.0 | 13, 12, 11 | 🆖 | Requires GMS and developer options disabled. Will warn "limited functionality" if no GMS is present, if present, it works normally. When it is launched for the first time, it will crash due to a lack of permissions granted on previous versions (5.61.0 and below). Starting with 5.62.0, an alert pops up `We have detected that you are running the GCash app on emulator. You will not be able to proceed.` 
+| GoTyme | 1.36.0 | 13 | ❌ | App crashes immediately upon launching the app
+| LANDBANK | 6.1.1 | 13 | ✅ | The app runs for the most part, however, during the user signing up for a bank account, it alerts you to `Error: The device is incompatible with the SDK` when verifying the identity of the user signing up
+
+### Productivity
+| Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
+|-------------|-----------------------|------------------|---------------|--------------|-------|
+
+
+### Casual
+| Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
+|-------------|-----------------------|------------------|---------------|--------------|-------|
+| Instagram | 244.0.0.17.110 | 12, 11 | ⚠️ || Need to use an Android keyboard (eg. MS SwiftKey) to be able to reply to stories (only works in 11. Keyboard app support in 12 is broken.
+| Instagram Lite | 339.0.0.10.100 | 12 | ✅ 
+| Facebook | 377.0.0.22.107 | 12 | ✅ | 
+| Facebook Lite | 339.0.0.10.100 | 12 | ✅ |
+| Facebook Messenger | 330.0.0.12.116 (x86_64) | 11 | ⚠️ | Chat Heads don't work
+| Facebook Messenger Lite | 334.0.0.10.101 | 12 | ✅ | 
+
+### System
+| Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
+|-------------|-----------------------|------------------|---------------|--------------|-------|
+| Android System Info | 1.4.2 | 11 | ✅ ||
+| Android System Webview | 118.0.5993.111 | 13, 12 | ✅ ||
+| Android System Webview Beta | 131.0.6778.2 | 13, 12 | ✅ ||
+| Android System Webview Dev | 103.0.5060.22 | 11 | ✅ || App installs correctly 
+| Camera | 2.0.002 | 13 | ⚠️ | While taking pictures or video works fine but changing the camera (to an inactive virtual camera) freezes the app. | Included in the subsystem
+
+### Streaming
+| Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
+|-------------|-----------------------|------------------|---------------|--------------|-------|
+| Apple Music | 3.7.1 | 11 | ✅ | To achieve Hi-Res Lossless, turn off WSA, open settings>sound>more sound settings>pick your device>properties>advanced and set format as 24-bit 192000 Hz (Studio Quality), then start WSA
+| Spotify | 8.7.30.1221 | 12, 11 | ✅ | 
+| Spotify Lite | 1.9.0.2883 | 11 | ✅
+| YouTube (Google)| 16.40.35 | 11 | 🆖 | Requires GMS
+| YouTube Music (Google) | 5.07.50 | 11 | 🆖 | Requires GMS
+| YouTube Music Vanced | 43.9.50 | 11 | ✅
+| YouTube Music ReVanced | 6.19.51 | 13 | ✅ || Used the x86-64 version as base
+| Youtube ReVanced | 19.16.39 | 11, 13 | ⚠️ | Picture-in-picture doesn't work & Can't join channel membership
+
+### Media
+| Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
+|-------------|-----------------------|------------------|---------------|--------------|-------|
+| AniLabX | 3.8.12 (Iridium) - Beta | 11 | ✅
+| Animiru | 0.16.0.0 | 13 | ✅ | 
+| Aniyomi | 0.15.2.1 | 13, 12 | ✅ |
+| Mihon (Beta) | 0.17.0-r6971 | 13 | ✅ | Notifications like "Large updates harm sources..." cut off. "Updating Library" progress bar doesn't show, until you clear the Mihon notification. Pressing any key on the keyboard during the Onboarding Guide (the thing when you start Mihon for the first time) will crash the app. | Some of the notifications will be missing due to the Windows Action Center limit of 20. When setting up the tracker, make sure to set the default browser (like Firefox) to sign in. `Copy to Clipboard` in the reader works and you can paste it to any windows app (like Paint).
+| Mihon (Stable) | 0.17.0 | 13 | ✅ |Notifications like "Large updates harm sources..." cut off. "Updating Library" progress bar doesn't show, until you clear the Mihon notification. Pressing any key on the keyboard during the Onboarding Guide (the thing when you start Mihon for the first time) will crash the app. | Some of the notifications will be missing due to the Windows Action Center limit of 20. When setting up the tracker, make sure to set the default browser (like Firefox) to sign in.
+
+### AI
+| Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
+|-------------|-----------------------|------------------|---------------|--------------|-------|
+| Character.AI | 1.7.5 | 13 | ✅ | Sometimes the text box for the prompt is broken when you resize the window. Restarting the app will restore the textbox.
+
+### Government
+| Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
+|-------------|-----------------------|------------------|---------------|--------------|-------|
+| eGovPH | 2.3.5 | 13 | ⚠️ | Tested on 3 WSA builds, stock WSA, with GMS installed and no root/Magisk/KernelSU, and with GMS-Magisk/KernelSU installed ([WSABuilds non-LTS, no Magisk/root installed, 2311.40000.5.0](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0)), ([WSABuilds LTS, with GMS, KernelSU/Magisk installed, 2311.40000.5.0](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0_LTS_3)). It is also recommended to temporarily disable developer settings before starting the app. With Magisk/root installed, it would alert "This device is jailbroken, you cannot continue". If no GMS services are present, it will tell you "This device is not supported for required Google Play Services".  The app doesn't start properly if you didn't grant the permissions beforehand in Android settings. For eReport, the app can't progress beyond the Current Location permission prompt as clicking the "Enable Location" doesn't do anything (even with the location permission granted for WSA in Windows); the workaround is to access it via the Suggested eGovPH Services part (found on the Home tab), however, it is stuck in report details as it still checks for the location permission. eKYC verification is problematic for laptop users is wonky with eGovPH's image handling, affecting the verification process (this also applies if you're registering an account from the same device for its face verification). Some pages display no content (notably FAQs and application details in some cases) |  Basic features work such as navigating through the app features/pages. The PhilSys Digital ID page works as well and can recognize it in the verification site from another device. Recommended to use an up-to-date version of Android System WebView since the app mostly relies on it.
+
+### Google apps
+| Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
+|-------------|-----------------------|------------------|---------------|--------------|-------|
+| Google | 14.44.29.28.x86_64 | 13 | 🆖 | Requires GMS
+| Google Calendar | 2022.18.2-448173739-release | 11 | ✅ | Requires GMS | Works fine
+| Google Camera | Unknown | 11 | ✅ || Works fine
+| Google Chrome | 130.0.6723.58 | 13, 12, 11 | ✅ | Requires microG or GMS to sync with Google Account |
+| Google Classroom | 8.0.181.20.90.3 | 11 | ✅ || Notifications are generic (do not show content), clicking on them may not open the app. Uploading attachments locally is not possible.
+| Google Contacts | 3.68.0.445910596 | Unknown | ✅ || The app may be glitchy from time to time, if that happens, restart the app
+| Google Drive | 2.24.127.0.all.alldpi | 13, 11 | ✅ | Works fine, may require GMS
+| Google Home | 3.14.1.5 | 13 | 🆖 | Requires GMS. | Tested on a WSA install with GMS. Bluetooth permissions can be easily bypassed by closing and opening the app again.
+| Google Keep Notes | 5.24.092.02.90 | 13 | 🆖 | Requires GMS | Tested inside WSA with GMS. The app works properly, including notes, and account syncing, and responds accordingly to app window sizing including its landscape mode.
+| Google Meet | 233.0.611229457<br>duo.android<br>20240218.16_p2 | 11, 13 | 🆖 | Requires GMS.| Tested with an NVIDIA RTX 4060 Laptop GPU. The share screen doesn't work due to WSA's windowed nature. Camera effects apart from lighting cannot be enabled and instead display "Something went wrong and the effect can't be started" 
+| Google Messages | messages.android<br>20240312_00_RC02<br>phone_dynamic | 13 | 🆖 | Requires GMS.| Tested under WSA with GMS installed. Phone pairing works, along with RCS messaging to phone contacts. Responsive design by resizing also works, albeit it can be quite finicky. Syncing also works, provided a Google account is present.|
+| Google Photos | 5.91.0.448844219 | 11 | ✅ | Requires GMS |
+| Google Play Games | 2023.08.46243 | 13 | 🆖 | Requires GMS
+| Google Play Store | 43.0.18-31 [0] [PR] 679686942 | 13 | 🆖 | Requires GMS. If you're changing languages a lot in the app, there's a prompt to restart the app to complete the update. Wait for a few seconds, then tap/click restart to proceed (sometimes works, sometimes not) or alternatively, clear the app data and open it again. | Play Protect certification status will be `Device is uncertified`
+| Google Services Framework (APK) | 12, API 32 | 12 | ❌ | Although installation succeeds and apps become aware of it, it lacks a lot of permissions needed for most functions, e.g. `read_device_config`, which can't be given even with the Settings app.
+| Google Translate | 6.45.0.474938783.2-release | 12 | ❌ | Crashes on startup due to reliance on Google Services Framework
+
 
 ### Apps
 | Application | Latest tested version | Android versions | Support level | Known Issues | Notes |
@@ -81,16 +188,9 @@ wsa://com.apple.android.music
 | AliExpress | 8.101.15 | 13 | ⚠️ | Sometimes the app crashes after `Sorry, we have detected unusual traffic from your network`, has significant scaling issues that can be mitigated by maximizing the window
 | Amaze File Manager | 3.5.3 | 11 | ✅ || Avoid updating the app
 | Amazon Alexa | 2.2.466191.0 | 12 | ✅ |
-| Android System Info | 1.4.2 | 11 | ✅ ||
-| Android System Webview | 118.0.5993.111 | 13, 12 | ✅ ||
-| Android System Webview Dev | 103.0.5060.22 | 11 | ✅ || App installs correctly 
-| AniLabX | 3.8.12 (Iridium) - Beta | 11 | ✅
-| Animiru | 0.16.0.0 | 13 | ✅ | 
-| Aniyomi | 0.15.2.1 | 13, 12 | ✅ |
 | AntennaPod | 2.5.0 | 11 | ✅
 | APKMirror Installer (Beta) | 1.3.2 | 11 | ⚠️ | Cannot remove ads without a subscription which requires Location to be turned on. Apart from this, there are random crashes
 | APKPure | 3.17.26 | 11 | ✅ | Sometimes, it might require multiple attempts to install an app
-| Apple Music | 3.7.1 | 11 | ✅ | To achieve Hi-Res Lossless, turn off WSA, open settings>sound>more sound settings>pick your device>properties>advanced and set format as 24-bit 192000 Hz (Studio Quality), then start WSA
 | App分享 (AppShare) | 2.1.1 (164) | 11 | ❌ | Can't login
 | Aptoide App Store | 9.20.2.1 | 11 | ✅ | Sometimes, downloads might get stuck
 | AquaMail (Pro) | 1.34.0-118 | 11 | ✅
@@ -100,21 +200,18 @@ wsa://com.apple.android.music
 | Aurora Store | 4.1.1 | 12, 11 | ✅
 | Authy | 26.1.0 | 11 | ❌ | This device does not meet the minimum integrity requirements. |
 | BandLab | 10.45.0 | 13, 12 | 🆖 | Slight audio lag with Android 12, it was fixed in Microsoft's 2303.40000.3.0 update | Only tested from installing from Google Play Store with Google services, otherwise app has no issues whatsoever. It's responsive, and in Android 13 there's no audio lag. |
-| BankID (Norway) | 2.1 | 12 | ❌ | Spams the desktop browser with new tabs about how the app thinks the phone is rooted. 
 | BBC iPlayer | 4.137.0.25403 | 11 | ✅ | Sideloaded
 | BBC Sounds | 2.13.0.19989 | 13 | ✅
 | Berry Browser | 3.57.8 | 12, 11 | ✅
-| Binance | 2.36.5 | 11 | ✅
 | Bloons TD 6 - NETFLIX | 43.3 | 13 | ✅ | Scaling can be a problems unless F11 and re-scaling is enabled |
 | Boost for Reddit | 1.12.5 | 12 | ✅ 
 | Bouncer | 1.26.3 | 11 | ⚠️
 | Brave Browser | 1.30.87 | 11 | ✅
 | BritBox by BBC & ITV | 2.1.2 (20043) | 11 | ❌ | App crashes on start
 | Bromite | 94.0.4606.94 | 11 | ✅ || Use x64 build
-| Camera | 2.0.002 | 13 | ⚠️ | While taking pictures or video works fine but changing the camera (to an inactive virtual camera) freezes the app. | Included in the subsystem
 | CamScanner | 6.3.0.2110240000 | 11 | ❌ | WSA freezes after taking a snap
 | Canvas Student | 6.14.1 | 11 | ✅
-| Character.AI | 1.7.5 | 13 | ✅ | Sometimes, the text box for the prompt is broken when you resize the window. Restarting the app will restore the textbox.
+| Character.AI | 1.7.5 | 13 | ✅ | Sometimes the text box for the prompt is broken when you resize the window. Restarting the app will restore the textbox.
 | ChMate | 0.8.10.153 | 11 | ✅
 | Clubhouse | 1.0.11 | 11 | ⚠️ | Unable to login via phone number, it throws an error after entering the OTP
 | Comixology | 3.10.18.310421 | 11 | ✅
@@ -140,22 +237,17 @@ wsa://com.apple.android.music
 | DuckDuckGo Privacy Browser+ | 5.142.2 | 12 | ✅
 | Easybell | 2.1.30 | 11 | ✅
 | EDS Lite | 2.0.0.237 | 12 | ✅ || Tested on an Intel x86-64 CPU (may work on AMD64 or ARM64). Recommended to add the exFAT module if you have a container that uses this filesystem.
-| eGovPH | 2.3.5 | 13 | ⚠️ | Tested on 3 WSA builds, stock WSA, with GMS installed and no root/Magisk/KernelSU, and with GMS-Magisk/KernelSU installed ([WSABuilds non-LTS, no Magisk/root installed, 2311.40000.5.0](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0)), ([WSABuilds LTS, with GMS, KernelSU/Magisk installed, 2311.40000.5.0](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0_LTS_3)). It is also recommended to temporarily disable developer settings before starting the app. With Magisk/root installed, it would alert "This device is jailbroken, you cannot continue". If no GMS services are present, it will tell you "This device is not supported for required Google Play Services".  The app doesn't start properly if you didn't grant the permissions beforehand in Android settings. For eReport, the app can't progress beyond the Current Location permission prompt as clicking the "Enable Location" doesn't do anything (even with the location permission granted for WSA in Windows); the workaround is to access it via the Suggested eGovPH Services part (found on the Home tab), however, it is stuck in report details as it still checks for the location permission. eKYC verification is problematic for laptop users is wonky with eGovPH's image handling, affecting the verification process (this also applies if you're registering an account from the same device for its face verification). Some pages display no content (notably FAQs and application details in some cases) |  Basic features work such as navigating through the app features/pages. The PhilSys Digital ID page works as well and can recognize it in the verification site from another device. Recommended to use an up-to-date version of Android System WebView since the app mostly relies on it.
 | Emby | 2.0.48g | 11 | ✅
 | ES File Explorer | 4.2.1.8 | 11 | ✅ || Avoid updating the app
 | Excel | 16.0.14527.20162 | 11 | ✅
 | F-Droid | 1.19.1 | 13, 12, 11 | ✅
 | F1 TV | 2.0.5 | 11 | ⚠️ | Terrible app experience including screen flashes and crashes while watching a video
 | FaceApp: Face Editor || 11 | ❌
-| Facebook | 377.0.0.22.107 | 12 | ✅ | 
-| Facebook Lite | 339.0.0.10.100 | 12 | ✅ |
-| Facebook Messenger | 330.0.0.12.116 (x86_64) | 11 | ⚠️ | Chat Heads don't work
-| Facebook Messenger Lite | 334.0.0.10.101 | 12 | ✅ | 
 | FAST Speed Test | 1.0.8 (88) | 11 | ✅
 | FDM (Free Download Manager) (Play Store) | 6.18.1.4896 | 13 | ✅ | The app crashed after the splash screen (after granting its needed permissions) on some versions of the subsystem (due to libhoudini). Works fine again as of WSA 2301.40000.7.0 | Tested on an Intel x86_64 CPU
 | Fennec F-Droid | 105.1.0 | 12 | ❌ | While the app is correctly installed, it crashes very often, and sites load very, very slowly compared to Firefox Nightly.
 | Files by Google | Unknown | 11 | ✅ || Works fine
-| Firefox |124.2.0 (2016012559) | 13, 12, 11 | ✅ | On Android 11, it works albeit with broken rendered webpages. On Android 12, works (without white box after updating WSA to 2205.40000.21.0) | Tested on Intel HD integrated graphics.
+| Firefox | 131.0.3 (2016050031) | 13, 12, 11 | ✅ | On Android 11, it works albeit with broken rendered webpages. On Android 12, works (without white box after updating WSA to 2205.40000.21.0) | Tested on Intel HD integrated graphics.
 | Firefox Nightly | 95.0a1 | 11 | ✅
 | Firefox Focus | 106.1 | 12 | ✅
 | foobar2000 | 1.2.30 | 11 | ✅
@@ -163,7 +255,6 @@ wsa://com.apple.android.music
 | FX File Explorer | 9.0.1.2 (r9012) | 13, 12, 11 | ✅ | Tested only on the base version (without FX Plus)
 | Game Pass | 2110.17.1005 | 11 | ✅ | GMS warnings might appear but these can be safely ignored | Cloud games can be launched but controlling them with controller or touch has not been tested.
 | GBoard | Unknown | 12, 11 | ⚠️ | Will not work as expected in newest WSA (2204.x)
-| GCash | 5.62.0 | 13, 12, 11 | 🆖 | Requires GMS and developer options disabled. Will warn "limited functionality" if no GMS is present, if present, it works normally. When it is launched for the first time, it will crash due to a lack of permissions granted on previous versions (5.61.0 and below). Starting with 5.62.0, an alert pops up `We have detected that you are running the GCash app on emulator. You will not be able to proceed.` 
 | Geekbench | 5.4.1 | 11 | ✅
 | GeoGebra | 5.0.674.0 | 11 | ✅
 | GitHub | 1.146.0 | 13 | ✅ | Opening any web links using the "Windows default app" doesn't work (including the sign-in). | Set a default browser app first (like Chrome) if you want to use external links within the app
@@ -171,22 +262,6 @@ wsa://com.apple.android.music
 | GlobeOne | 1.9.39 | 12, 13| ✅ || May require GMS (otherwise use other login methods available in the app)
 | Gmail | 2022.05.01.440951655.Release | 11 | ✅ || May require GMS
 | Gojek | 4.30.1 | 11 | 🆖 | Requires GMS
-| Google | 14.44.29.28.x86_64 | 13 | 🆖 | Requires GMS
-| Google Calendar | 2022.18.2-448173739-release | 11 | ✅ | Requires GMS | Works fine
-| Google Camera | Unknown | 11 | ✅ || Works fine
-| Google Chrome | 119.0.6045.66 | 13, 12, 11 | ✅ | Requires microG or GMS to sync with Google Account |
-| Google Classroom | 8.0.181.20.90.3 | 11 | ✅ || Notifications are generic (do not show content), clicking on them may not open the app. Uploading attachments locally is not possible.
-| Google Contacts | 3.68.0.445910596 | Unknown | ✅ || The app may be glitchy from time to time, if that happens, restart the app
-| Google Drive | 2.24.127.0.all.alldpi | 13, 11 | ✅ | Works fine, may require GMS
-| Google Home | 3.14.1.5 | 13 | 🆖 | Requires GMS. | Tested on a WSA install with GMS. Bluetooth permissions can be easily bypassed by closing and opening the app again.
-| Google Keep Notes | 5.24.092.02.90 | 13 | 🆖 | Requires GMS | Tested inside WSA with GMS. The app works properly, including notes, and account syncing, and responds accordingly to app window sizing including its landscape mode.
-| Google Meet | 233.0.611229457<br>duo.android<br>20240218.16_p2 | 11, 13 | 🆖 | Requires GMS.| Tested with an NVIDIA RTX 4060 Laptop GPU. The share screen doesn't work due to WSA's windowed nature. Camera effects apart from lighting cannot be enabled and instead display "Something went wrong and the effect can't be started" 
-| Google Messages | messages.android<br>20240312_00_RC02<br>phone_dynamic | 13 | 🆖 | Requires GMS.| Tested under WSA with GMS installed. Phone pairing works, along with RCS messaging to phone contacts. Responsive design by resizing also works, albeit it can be quite finicky. Syncing also works, provided a Google account is present.|
-| Google Photos | 5.91.0.448844219 | 11 | ✅ | Requires GMS |
-| Google Play Games | 2023.08.46243 | 13 | 🆖 | Requires GMS
-| Google Play Store | 43.0.18-31 [0] [PR] 679686942 | 13 | 🆖 | Requires GMS. If you're changing languages a lot in the app, there's a prompt to restart the app to complete the update. Wait for a few seconds, then tap/click restart to proceed (sometimes works, sometimes not) or alternatively, clear the app data and open it again. | Play Protect certification status will be `Device is uncertified`
-| Google Services Framework (APK) | 12, API 32 | 12 | ❌ | Although installation succeeds and apps become aware of it, it lacks a lot of permissions needed for most functions, e.g. `read_device_config`, which can't be given even with the Settings app.
-| Google Translate | 6.45.0.474938783.2-release | 12 | ❌ | Crashes on startup due to reliance on Google Services Framework
 | GoTyme | 1.36.0 | 13 | ❌ | App crashes immediately upon launching the app 
 | Grab | 5.172.200 | 11 | ✅
 | Grayjay | 253 | 13 | ✅ || Tested with the unversal installer variant. Works well on an Intel CPU with integrated graphics (performance may vary)
@@ -203,8 +278,6 @@ wsa://com.apple.android.music
 | Hyper Square | 3.0.1 | 11 | ✅
 | IFTTT | 4.29.2 | 12 | 🆖 | Need GMS to receive notification. Ignore the Notification Reader Access error. | To avoid Play Protect blocking login to the Google Store, use GMS version open_gapps-x86_64-11.0-pico-20220215. (See also: WSAGAScript issue #213). 
 | Infinity | 7.2.9 | 13 | ✅ ||Works well in portrait and landscape resizing.
-| Instagram | 244.0.0.17.110 | 12, 11 | ⚠️ || Need to use an Android keyboard (eg. MS SwiftKey) to be able to reply to stories (only works in 11. Keyboard app support in 12 is broken.
-| Instagram Lite | 339.0.0.10.100 | 12 | ✅ 
 | Intra | 1.3.8 | 12 | ✅ || VPN workaround is needed after installation to allow the app to create VPN connections.
 | iOS app (any) || 11 | ❌ | Thanks for testing, Brad.
 | Ipsos MediaLink | 5.2.20 | 13 | ✅ || The VPN workaround is required, as are Accessibility permissions, and a CA certificate needs to be installed (wsa://com.android.settings) 
@@ -233,9 +306,8 @@ wsa://com.apple.android.music
 | Koguma | 0.0.1 | 13 | ✅
 | Kotatsu | 6.8.3 | 13 | ✅ | | Keyboard navigation is supported
 | KRL Access | 4.1.0 | 11 | ❌ | App crashes
-| LANDBANK | 6.1.1 | 13 | ✅ | The app runs for the most part, however, during the user signing up for a bank account, it alerts you to `Error: The device is incompatible with the SDK` when verifying the identity of the user signing up
 | Lawnchair | 14 beta 2 | 13, 12, 11 | ✅ | The app drawer seems to be blank in portrait. A workaround would be either maximizing the app or resize it to be in a landscape orientation. Can't change the wallpaper with a toast notification: `Disabled by your admin`.
-| Lazada | 7.37.0 | 13 | ⚠️ | Google login requires GMS installed (use Email or Facebook login as alternatives). `Slide to verify` appears too often if logging in. Weird scaling options (interface elements are too large) | Keep it in portrait for the app to be usable.
+| Lazada | 7.62.0 | 13 | ⚠️ | Google login requires GMS installed (use Email or Facebook login as alternatives). `Slide to verify` appears too often if logging in. Weird scaling options (interface elements are too large, [an example](https://ibb.co/98qFhmm)) | Keep it in portrait for the app to be usable.
 | Libby | 4.3.1 | 11 | ✅
 | LINE | 12.0.1 | 11 | ✅
 | Line Rangers | 7.6.3 | 11 | ✅
@@ -262,8 +334,6 @@ wsa://com.apple.android.music
 | Microsoft Swiftkey Keyboard | 8.10.12.4 | 12, 11 | ✅ | Works on WSA 2203 (Android 11), but on-screen is completely broken in WSA 2204(Dev) (Android 12.1)
 | Microsoft Teams | 1416/1.0.0 | 12 | ✅
 | Mic Test | 5.2 | 12 | ✅ || lauresprojects.com.mictest
-| Mihon (Beta) | 0.16.5-r6916 | 13 | ✅ | Notifications like "Large updates harm sources..." cut off. "Updating Library" progress bar doesn't show, until you clear the Mihon notification. Pressing any key on the keyboard during the Onboarding Guide (the thing when you start Mihon for the first time) will crash the app. | Some of the notifications will be missing due to the Windows Action Center limit of 20. When setting up the tracker, make sure to set the default browser (like Firefox) to sign in. `Copy to Clipboard` in the reader works and you can paste it to any windows app (like Paint).
-| Mihon (Stable) | 0.16.5 | 13 | ✅ |Notifications like "Large updates harm sources..." cut off. "Updating Library" progress bar doesn't show, until you clear the Mihon notification. Pressing any key on the keyboard during the Onboarding Guide (the thing when you start Mihon for the first time) will crash the app. | Some of the notifications will be missing due to the Windows Action Center limit of 20. When setting up the tracker, make sure to set the default browser (like Firefox) to sign in.
 | MiX | 6.57.0-Beta_B21070510 | 11 | ✅
 | Mobile JKN | 3.7.1 | 11 | ✅ || Some features might require GMS
 | MOLA | 2.1.3 | 11 | ❌ | App crashes
@@ -358,7 +428,7 @@ wsa://com.apple.android.music
 | Shein | 9.9.4 | 13 | ✅ || Keep it in portrait to be usable
 | ShemarooMe | 1.0.16 (106) | 11 | ✅
 | Shizuku (Play Store) | 13.5.4.r1049.0r53409 | 13, 12, 11 | ✅ | Can't toggle wireless debugging in WSA 2207.40000.8.0 (android 12), use ADB on PC to use connect instead (even with dev options and USB debugging is on). | The service also works with root (Tested with Magisk)
-| Shopee (PH) | 3.35.31 | 13, 11 | ⚠️ | Any login attempt, even if Magisk DenyList is enabled for Shopee PH, would result in a ``Login Failed (F13) error: Oops, your account has been restricted due to unusual activities. Please make sure you comply with Shopee policies.`` Google login requires GMS installed (use Email or Facebook login as alternatives). Banner information is stretched horizontally 
+| Shopee (PH) | 3.35.31 | 13, 11 | ⚠️ | Any login attempt, even if Magisk DenyList is enabled for Shopee PH, would result in a ``Login Failed (F13) error: Oops, your account has been restricted due to unusual activities. Please make sure you comply with Shopee policies.`` Google login requires GMS installed (use Email or Facebook login as alternatives). Banner information is stretched horizontally. Sometimes [this error](https://ibb.co/FxcxxcZ) pops up if you don't log in.
 | Shosetsu | 2.4.4 | 13, 12 | ✅ | Keyboard navigation is unsupported when reading light novel.
 | Showtime | 3.1.1 | 11 | ❌ | App crashes when you try to login. Button clicks don't work
 | SIM Toolkit (Google) | 12, API 32 | 12 | ❌ | Does not launch even with a shortcut.
@@ -378,8 +448,6 @@ wsa://com.apple.android.music
 | Sonic The Hedgehog 2 Classic | 1.10.2 | 13 | ✅ |
 | SoundHound | 10.1.2 | 12 | ✅ |  | Ensure in Windows' audio settings that the microphone has a high enough sound level 
 | Speedtest by Ookla | 4.8.0 (177906) | 12 | ✅ | VPN workaround is needed after installation to allow the app to create VPN connections.
-| Spotify | 8.7.30.1221 | 12, 11 | ✅ | 
-| Spotify Lite | 1.9.0.2883 | 11 | ✅
 | Squircle IDE | v2022.1.2 | 12, 11 | ✅
 | Steam | 2.3.13 | 11 | ✅
 | Steam Chat | 1.0 | 11 | ✅
@@ -393,7 +461,7 @@ wsa://com.apple.android.music
 | Tachiyomi (Stable) | 0.15.3 | 13, 12, 11 | ✅ | Notifications like "Large updates harm sources..." cut off. Sometimes, "Updating Library" progress bar doesn't show, requires to clear the Tachiyomi notification. | Hovering the mouse pointer, highlights the input element. Some of the notifications will be missing due to the Windows Action Center limit of 20.
 | TachiyomiAZ | 8.8.1-AZ | 13, 12, 11 | ✅
 | TachiyomiJ2K/TachiJ2K | 1.7.4 | 13, 12, 11 | ✅ | Parsing links (from a browser) causes to open the Tachiyomi extension window or app picker dialog instead of opening TachiJ2K itself when you have multiple Tachiyomi forks are installed.
-| TachiyomiSY | 1.10.5 | 13, 12, 11 | ✅
+| TachiyomiSY | 1.11.0 | 13, 12, 11 | ✅
 | Tap Tap | 3.1.1 | 12, 11 | ✅ | Sometimes freeze if you brute force the app, fixed by restarting the app
 | TeamViewer | 15.22.136 | 11 | ✅
 | Telegram | 8.1.2 | 11 | ✅
@@ -453,11 +521,6 @@ wsa://com.apple.android.music
 | Yodayo (Play Store)| 1.4.2 | 13 | ✅ | Requires GMS only when logging in using Google account. You can try logging in with e-mail instead. | 
 | Yodayo (APK) | 1.19.0 | 13 | ✅ | Requires GMS only when logging in using Google account. You can try logging in with e-mail instead. | 
 | Yokai | 1.8.4.3 | 13 | ✅
-| YouTube (Google)| 16.40.35 | 11 | 🆖 | Requires GMS
-| YouTube Music (Google) | 5.07.50 | 11 | 🆖 | Requires GMS
-| YouTube Music Vanced | 43.9.50 | 11 | ✅
-| YouTube Music ReVanced | 6.19.51 | 13 | ✅ || Used the x86-64 version as base
-| Youtube ReVanced | 19.16.39 | 11, 13 | ⚠️ | Picture-in-picture doesn't work & Can't join channel membership
 | ZArchiver | 0.9.5.8 (9596) | 11 | ✅
 | Zenly (w/o GMS) | 4.55.2 | 11 | ⚠️ | App crashes after login, but background location works
 | Zoom | 5.8.3.2634 | 11 | ⚠️ | Camera severely glitched, share screen doesn't work due to WSA's windowed nature.
